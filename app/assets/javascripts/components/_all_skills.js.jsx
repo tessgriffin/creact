@@ -4,13 +4,13 @@ var AllSkills = React.createClass({
   },
 
   onUpdate(skill) {
-    this.props.handleUpdate(skill);
+    this.props.onUpdate(skill);
   },
 
-  render () {
-    var skills = this.props.skills.map((skill) => {
+  render() {
+    let skills = this.props.skills.map((skill, index) => {
       return (
-        <div key={skill.id}>
+        <div key={index}>
           <Skill skill={skill}
                  handleDelete={this.handleDelete.bind(this, skill.id)}
                  handleUpdate={this.onUpdate}/>
@@ -18,7 +18,7 @@ var AllSkills = React.createClass({
       )
     });
 
-    return(
+    return (
       <div>
         {skills}
       </div>
